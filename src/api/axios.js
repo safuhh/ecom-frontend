@@ -6,6 +6,10 @@ const api = axios.create({
   baseURL: "http://localhost:3033/api",
   withCredentials: true, // cookies included
 });
+const refreshApi = axios.create({
+  baseURL: "http://localhost:3033/api",
+  withCredentials: true,
+});
 
 let isRefreshing = false;
 let failedQueue = [];
@@ -21,17 +25,17 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-
 api.interceptors.response.use(
   (res) => res,
   async (error) => {
     const originalRequest = error.config;
 
-    if (
-      error.response?.status === 401 &&
-      error.response?.data?.message === "Invalid or expired token" &&
-      !originalRequest._retry
-    ) {
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      if (originalRequest.url.includes("/refresh-token")) {
+        store.dispatch(logout());
+        return Promise.reject(error);
+      }
+
       if (isRefreshing) {
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
@@ -43,17 +47,15 @@ api.interceptors.response.use(
 
       originalRequest._retry = true;
       isRefreshing = true;
-
       try {
-    
-        const res = await api.get("/user/refresh-token");
+        const res = await refreshApi.post("/user/refresh-token");
         const newToken = res.data.token;
 
         store.dispatch(
           loginSuccess({
             token: newToken,
             user: store.getState().auth.user,
-          })
+          }),
         );
 
         processQueue(null, newToken);
@@ -70,7 +72,9 @@ api.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  }
+  },
 );
-
 export default api;
+
+
+
