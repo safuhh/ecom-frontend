@@ -1,78 +1,78 @@
-export default function Footer() {
+import React from 'react';
+
+const Footer = () => {
+  const footerLinks = [
+    {
+      title: "COLLECTIONS",
+      links: ["Heritage Series", "Grand Complications", "Diving & Sport", "New Arrivals"],
+    },
+    {
+      title: "THE MAISON",
+      links: ["Our Heritage", "Craftsmanship", "Sustainability", "Careers"],
+    },
+    {
+      title: "CLIENT CARE",
+      links: ["Service & Repair", "Boutique Finder", "Contact Us", "Warranty"],
+    },
+  ];
+
   return (
-    <footer className="border-t border-black bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+    <footer className="bg-white text-zinc-900 font-sans px-6 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto">
+
+  
+        <div className="h-px bg-zinc-500 w-24 sm:w-32 md:w-48 mx-auto mb-16" />
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           
-          {/* Brand */}
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-              Vyntra
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-gray-500">
-              Premium watches crafted for those who respect time, precision,
-              and timeless design.
+    
+          <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+            <h2 className="text-2xl tracking-[0.3em] font-light uppercase mb-2">Vyntra</h2>
+            <p className="text-[10px] tracking-[0.15em] text-zinc-400 uppercase">
+              Swiss Haute Horlogerie — Since 1994
             </p>
+            
+            <div className="mt-6 flex justify-center md:justify-start gap-6">
+              <a href="#" className="text-[11px] tracking-widest text-zinc-500 hover:text-black transition-colors duration-300">INSTAGRAM</a>
+              <a href="#" className="text-[11px] tracking-widest text-zinc-500 hover:text-black transition-colors duration-300">TWITTER</a>
+            </div>
           </div>
 
-          {/* Shop */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
-              Shop
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm text-gray-500">
-              <li className="cursor-pointer transition hover:text-gray-900">
-                All Watches
-              </li>
-              <li className="cursor-pointer transition hover:text-gray-900">
-                New Arrivals
-              </li>
-              <li className="cursor-pointer transition hover:text-gray-900">
-                Best Sellers
-              </li>
-              <li className="cursor-pointer transition hover:text-gray-900">
-                Limited Edition
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
-              Support
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm text-gray-500">
-              <li className="cursor-pointer transition hover:text-gray-900">
-                Contact Us
-              </li>
-              <li className="cursor-pointer transition hover:text-gray-900">
-                Shipping & Returns
-              </li>
-              <li className="cursor-pointer transition hover:text-gray-900">
-                Warranty
-              </li>
-              <li className="cursor-pointer transition hover:text-gray-900">
-                FAQs
-              </li>
-            </ul>
+          
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left mt-10 md:mt-0">
+            {footerLinks.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-[11px] tracking-[0.2em] font-semibold mb-4 sm:mb-6 text-zinc-900">
+                  {section.title}
+                </h3>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link}>
+                      <a 
+                        href="#" 
+                        className="text-[11px] tracking-wider text-zinc-400 hover:text-black transition-colors duration-300 uppercase"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-6 text-sm text-gray-500 md:flex-row">
-          <p>© {new Date().getFullYear()} Vyntra. All rights reserved.</p>
+        <div className="h-px bg-zinc-200 w-24 sm:w-32 md:w-48 mx-auto mt-16" />
 
-          <div className="flex gap-6">
-            <span className="cursor-pointer transition hover:text-gray-900">
-              Privacy Policy
-            </span>
-            <span className="cursor-pointer transition hover:text-gray-900">
-              Terms of Service
-            </span>
-          </div>
+
+        <div className="pt-6 text-center">
+          <p className="text-[9px] tracking-[0.25em] text-zinc-400 uppercase">
+            © {new Date().getFullYear()} Vyntra Haute Horlogerie. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

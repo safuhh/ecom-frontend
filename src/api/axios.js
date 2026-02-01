@@ -4,7 +4,7 @@ import { loginSuccess, logout } from "../redux/authSlice";
 
 const api = axios.create({
   baseURL: "http://localhost:3033/api",
-  withCredentials: true, // cookies included
+  withCredentials: true,
 });
 const refreshApi = axios.create({
   baseURL: "http://localhost:3033/api",
@@ -49,7 +49,7 @@ api.interceptors.response.use(
       isRefreshing = true;
       try {
         const res = await refreshApi.post("/user/refresh-token");
-        const newToken = res.data.token;
+        const newToken = res.data.token
 
         store.dispatch(
           loginSuccess({
@@ -75,6 +75,3 @@ api.interceptors.response.use(
   },
 );
 export default api;
-
-
-

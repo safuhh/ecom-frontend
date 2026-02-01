@@ -16,7 +16,7 @@ function Login() {
     const res = await api.post("/user/login", { email, password });
     console.log(res.data);
 
-    // Save user & token in Redux
+
     dispatch(
       loginSuccess({
         token: res.data.token,
@@ -26,11 +26,11 @@ function Login() {
 
     toast.success("Login successful");
 
-    // Role-based redirect
+
     if (res.data.user.role === "admin") {
-      navigate("/dashboard"); // Admin dashboard
+      navigate("/dashboard"); 
     } else {
-      navigate("/"); // Normal user home
+      navigate("/");
     }
   } catch (err) {
     console.log(err.response?.data);
@@ -39,72 +39,77 @@ function Login() {
 };
 
 
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full space-y-8 p-10 bg-white rounded-2xl shadow-xl border border-gray-100">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
-            Welcome Back
-          </h2>
-          <p className="mt-2 text-sm text-gray-500">
-            Please enter your details to sign in.
-          </p>
-        </div>
+ return (
+  <div className="min-h-screen flex items-center justify-center bg-[#f8f8f6] px-4">
+    <div className="w-full max-w-md bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-12 border border-black/5">
 
-        <form className="mt-8 space-y-6" onSubmit={loginUser}>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email Address
-              </label>
-              <input
-                type="email"
-                required
-                className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-150 ease-in-out"
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <div className="flex justify-between items-center mb-1">
-                <label className="block text-sm font-medium text-gray-700">
-                  Password
-                </label>
-              </div>
-              <input
-                type="password"
-                required
-                className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-150 ease-in-out"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200"
-            >
-              Sign In
-            </button>
-          </div>
-        </form>
-
-        <p className="text-center text-sm text-gray-600">
-          Don't have an account?{" "}
-          <button 
-            onClick={() => navigate("/register")}
-            className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
-          >
-            Create account
-          </button>
+      {/* Brand */}
+      <div className="text-center mb-10">
+        <span className="text-[11px] tracking-[0.45em] uppercase text-gray-500">
+          Vyntra
+        </span>
+        <h2 className="mt-4 text-3xl font-serif text-gray-900">
+          Welcome Back
+        </h2>
+        <p className="mt-2 text-sm text-gray-500">
+          Enter your details to continue
         </p>
       </div>
+
+      <form className="space-y-6" onSubmit={loginUser}>
+        {/* Email */}
+        <div>
+          <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            required
+            placeholder="you@vyntra.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full bg-transparent border-b border-gray-300 py-3 text-sm focus:outline-none focus:border-black transition"
+          />
+        </div>
+
+        {/* Password */}
+        <div>
+          <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">
+            Password
+          </label>
+          <input
+            type="password"
+            required
+            placeholder="••••••••"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full bg-transparent border-b border-gray-300 py-3 text-sm focus:outline-none focus:border-black transition"
+          />
+        </div>
+
+        {/* Button */}
+        <button
+          type="submit"
+          className="w-full mt-8 py-3 text-sm tracking-widest uppercase bg-black text-white hover:bg-gray-900 transition rounded-full"
+        >
+          Sign In
+        </button>
+      </form>
+
+      {/* Footer */}
+      <p className="mt-10 text-center text-xs text-gray-500 tracking-wide">
+        New to Vyntra?{" "}
+        <button
+          onClick={() => navigate("/register")}
+          className="text-black hover:underline"
+        >
+          Create an account
+        </button>
+      </p>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default Login;

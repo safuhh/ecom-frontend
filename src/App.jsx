@@ -12,6 +12,11 @@ import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
 import AdminProducts from "./admin/AdminProducts";
 import Cart from "./components/Cart";
+import Wishlist from "./components/wishlist";
+import CategoryFilter from "./components/CategoryFilter";
+import Complete from "./components/Complete";
+
+
 
 export default function App() {
   return (
@@ -37,6 +42,10 @@ export default function App() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/adminproduct" element={<AdminProducts />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cat" element={<CategoryFilter />} />
+    <Route path="/complete" element={<Complete />} />
+
       </Routes>
     </div>
   );
