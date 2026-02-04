@@ -61,15 +61,20 @@ export default function SingleProduct() {
       }
     }
   };
-const handleBuyNow = async () => {
-  try {
-    const res = await createCheckoutSession(product._id);
-    window.location.href = res.data.url;
-  } catch (err) {
-    toast.error("Please login first");
-    navigate("/login");
-  }
+const handleBuyNow = () => {
+  const products = [
+    {
+      productId: product._id,
+      quantity: 1,
+    },
+  ];
+
+  navigate("/order", {
+    state: { products },
+  });
 };
+
+
 
 
 

@@ -15,7 +15,10 @@ import Cart from "./components/Cart";
 import Wishlist from "./components/wishlist";
 import CategoryFilter from "./components/CategoryFilter";
 import Complete from "./components/Complete";
-
+import UserManagement from "./admin/UserManagement";
+import OrderForm from "./components/OrderForm";
+import MyOrders from "./components/MyOrders";
+import AdminOrders from "./admin/AdminOrders";
 
 
 export default function App() {
@@ -44,7 +47,12 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cat" element={<CategoryFilter />} />
-    <Route path="/complete" element={<Complete />} />
+        <Route path="/complete" element={<Complete />} />
+        <Route path="/admin/users" element={<UserManagement />} />
+        <Route path="/order" element={<OrderForm />} />
+        <Route path="/my-orders" element={<MyOrders />} />
+       <Route path="/admin/managment" element={<AdminOrders />} />
+       <Route path="/dash" element={<Dashboard />} />
 
       </Routes>
     </div>

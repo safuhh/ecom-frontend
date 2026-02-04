@@ -5,6 +5,7 @@ import {
   deleteproduct,
   updateproduct,
 } from "../api/productApi";
+import AdminNavbar from "./AdminNavbar";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState([]);
@@ -112,6 +113,7 @@ export default function AdminProducts() {
 
   return (
   <div className="min-h-screen bg-[#fcfcfc] text-slate-900 font-sans antialiased">
+    <AdminNavbar/>
     {/* Header Section */}
     <header className="max-w-7xl mx-auto px-4 sm:px-8 pt-8 sm:pt-12 pb-6 sm:pb-8">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-gray-100 pb-6 gap-4">

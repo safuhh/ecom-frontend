@@ -2,7 +2,6 @@ import { useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Navbar from "./Navbar";
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +22,7 @@ function Register() {
 
  return (
   <div className="min-h-screen flex items-center justify-center bg-[#f8f8f6] px-4">
-    <Navbar/>
+
     <div className="w-full max-w-md bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-12 border border-black/5">
 
       {/* Brand */}

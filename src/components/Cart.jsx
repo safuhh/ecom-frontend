@@ -3,6 +3,7 @@ import { getcart, addtocart, removecart } from "../api/cartApis";
 import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react"; 
 import {  useNavigate } from "react-router-dom";
 import { createCartCheckoutSession } from "../api/stripeApi";
+import { toast } from "react-toastify";
 export default function Cart() {
   const [cart, setcart] = useState({ products: [] });
   const navigate = useNavigate()
@@ -49,20 +50,22 @@ export default function Cart() {
   const handle= ()=>{
     navigate("/")
   }
-const handleBuyNow = async () => {
-  try {
-    const products = cart.products.map(item => ({
-      productId: item.productId._id,
-      quantity: item.quantity,
-    }));
-
-    const res = await createCartCheckoutSession(products);
-    window.location.href = res.data.url;
-  } catch (err) {
-    toast.error("Payment failed");
-    navigate("/login");
+const handleBuyNow = () => {
+  if (!cart?.products?.length) {
+    toast.error("Cart is empty");
+    return;
   }
+
+  const products = cart.products.map(item => ({
+    productId: item.productId._id,
+    quantity: item.quantity,
+  }));
+
+  navigate("/order", {
+    state: { products },
+  });
 };
+
 
  
   const totalPrice = cart.products.reduce((acc, item) => {

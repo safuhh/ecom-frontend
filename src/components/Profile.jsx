@@ -56,7 +56,7 @@ function Profile() {
                 <ul className="space-y-4 text-[13px] tracking-wide uppercase">
                   <li><a href="/" className="hover:text-gray-500 transition-colors">Overview</a></li>
                   <li><a href="#" className="font-bold border-b border-black pb-1">Personal Details</a></li>
-                  <li><a href="#" className="hover:text-gray-500 transition-colors">My Orders</a></li>
+                  <li><a href="/my-orders" className="hover:text-gray-500 transition-colors">My Orders</a></li>
                   <li><a href="/product" className="hover:text-gray-500 transition-colors">Watches</a></li>
                 </ul>
               </div>
