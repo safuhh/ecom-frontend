@@ -27,7 +27,18 @@ const Complete = () => {
     saveOrder();
   }, []);
 
-  if (status === "loading") return <p>Processing order…</p>;
+if (status === "loading") {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[50vh] w-full">
+      {/* Optional: Simple black spinner */}
+      <div className="w-6 h-6 border-2 border-gray-200 border-t-black rounded-full animate-spin mb-3"></div>
+      
+      <p className="text-black font-semibold tracking-wide uppercase text-xs">
+        Processing order…
+      </p>
+    </div>
+  );
+}
 
 return (
   <div className="min-h-screen bg-white flex items-center justify-center px-4">

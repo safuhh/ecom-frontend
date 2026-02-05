@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { getcart, addtocart, removecart } from "../api/cartApis";
 import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react"; 
 import {  useNavigate } from "react-router-dom";
-import { createCartCheckoutSession } from "../api/stripeApi";
 import { toast } from "react-toastify";
 export default function Cart() {
   const [cart, setcart] = useState({ products: [] });

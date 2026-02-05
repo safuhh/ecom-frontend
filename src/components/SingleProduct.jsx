@@ -6,7 +6,6 @@ import { addToWishlist } from "../api/wishlistApis";
 import { toast } from "react-toastify";
 import { Heart, ShoppingBag, ArrowLeft } from "lucide-react";
 import Navbar from "./Navbar";
-import { createCheckoutSession } from "../api/stripeApi";
 export default function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);

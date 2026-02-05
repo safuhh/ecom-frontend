@@ -98,7 +98,7 @@ const RevenueChart = () => {
   };
 
   return (
-    <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
+    <div className="bg-white border border-black rounded-2xl p-5 shadow-sm">
       <div className="mb-4">
         <p className="text-[11px] uppercase tracking-widest text-slate-400 font-semibold">
           Monthly Revenue

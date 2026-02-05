@@ -30,16 +30,38 @@ export default function AdminNavbar() {
       {/* FIXED TOP NAV */}
       <nav className="fixed top-0 left-0 w-full h-16 bg-white z-[1000] border-b border-gray-100 flex items-center justify-between px-4 sm:px-8">
         
-        {/* BRAND */}
-        <div className="flex items-center gap-4">
-          <div className="w-8 h-8 bg-black rounded flex items-center justify-center text-white text-xs font-bold tracking-tighter">
-            V
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-sm font-black tracking-[0.2em]">VYNTRA</span>
-            <span className="text-[8px] text-amber-600 font-bold tracking-[0.1em] uppercase">Control Center</span>
-          </div>
-        </div>
+       {/* BRAND */}
+<div className="flex items-center gap-6 cursor-pointer group">
+  {/* THE ICON: THE SILENT 'V' */}
+  <div className="relative w-12 h-12 flex items-center justify-center">
+    {/* Ultra-thin architectural circle */}
+    <div className="absolute inset-0 border-[0.5px] border-gray-200 rounded-full transition-colors duration-700 group-hover:border-black" />
+    
+    {/* THE V: Serif/Sharp Aesthetic */}
+    <div className="relative">
+      <span className="text-2xl font-serif font-light text-black tracking-tighter">
+        V
+      </span>
+      {/* Precision Dot - Smaller, No Glow, Just Black */}
+      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[2px] h-[2px] bg-black rounded-full" />
+    </div>
+  </div>
+
+  {/* THE TEXT: SPACIOUS & MINIMAL */}
+  <div className="flex flex-col py-1">
+    <div className="flex flex-col">
+      <h1 className="text-[15px] font-medium tracking-[0.5em] text-black leading-tight uppercase">
+        Vyntra
+      </h1>
+      <span className="text-[6px] font-medium tracking-[0.6em] text-gray-400 uppercase mt-1">
+        Controll Center
+      </span>
+    </div>
+  </div>
+  
+  {/* The "Invisible" Divider */}
+  <div className="h-4 w-[1px] bg-gray-100 ml-2" />
+</div>
 
         {/* DESKTOP NAV */}
         <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center h-full">

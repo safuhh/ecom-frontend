@@ -76,6 +76,8 @@ const Dashboard = () => {
             <StatCard title="Revenue" value={`₹${stats.totalRevenue}`} />
             <StatCard title="Pending Orders" value={stats.pendingOrders} />
           </div>
+          <br />
+          
            <RevenueChart/>
         </div>
       </main>
