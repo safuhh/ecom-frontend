@@ -48,17 +48,17 @@ export default function ProductList() {
           </span>
         </motion.div>
         
-        <h1 className="text-center text-4xl sm:text-6xl md:text-8xl font-extralight tracking-tight md:tracking-[-0.05em] leading-[1.1] mb-8 md:mb-12">
-          Chronometric <br />
-          <motion.span 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="font-serif italic text-neutral-400"
-          >
-            Icons
-          </motion.span>
-        </h1>
+          <h1 className="text-center text-4xl sm:text-6xl md:text-8xl font-extralight tracking-tight md:tracking-[-0.05em] leading-[1.1] mb-8 md:mb-12">
+            Chronometric <br />
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="font-serif italic text-neutral-400"
+            >
+              Icons
+            </motion.span>
+          </h1>
 
         {/* 3. FILTERS: Flex-wrap for small screens */}
         <nav className="flex flex-wrap justify-center items-center gap-6 md:gap-20 py-6 md:py-10 border-b border-neutral-100">

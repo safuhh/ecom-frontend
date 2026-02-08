@@ -8,7 +8,7 @@ const stripePromise = loadStripe(
 
 function Payment({ children }) {
   const clientSecretPromise = useMemo(() => {
-    return fetch("https://ecom-backend-9ok5.onrender.com/api/stripe/create-checkout-session", {
+    return fetch("http://localhost:3033/api/stripe/create-checkout-session", {
       method: "POST",
       credentials: "include",
     })
