@@ -19,7 +19,7 @@ const Complete = () => {
         await verifyPayment(sessionId);
         setStatus("success");
       } catch (err) {
-        console.log("VERIFY ERROR 👉", err.response?.data || err.message);
+        console.log("VERIFY ERROR ", err.response?.data || err.message);
         setStatus("failed");
       }
     };

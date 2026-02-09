@@ -69,9 +69,13 @@ const handleBuyNow = () => {
   ];
 
   navigate("/order", {
-    state: { products },
+    state: {
+      products,
+      checkoutType: "single",
+    },
   });
 };
+
 
 
 

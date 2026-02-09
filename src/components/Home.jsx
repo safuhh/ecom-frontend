@@ -132,11 +132,11 @@ export default function Home() {
             className="col-span-1 lg:col-span-7 order-2 lg:order-2 -mx-6 md:mx-0 mt-8 lg:mt-0" 
           >
             <div className="relative group overflow-hidden flex justify-center items-center">
-              <div className="relative w-full lg:max-w-[770px]">
+              <div className="relative w-full h-[682px] lg:max-w-[737px]">
                 <img
                   src={ima}
                   alt="Luxury Watch"
-                  className="w-full h-[50vh] md:h-auto object-cover md:object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 md:rounded-lg"
+                  className="w-full h-[70vh] md:h-auto object-cover md:object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 md:rounded-lg"
                 />
               </div>
             </div>

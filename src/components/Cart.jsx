@@ -3,6 +3,7 @@ import { getcart, addtocart, removecart } from "../api/cartApis";
 import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react"; 
 import {  useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Navbar from "./Navbar";
 export default function Cart() {
   const [cart, setcart] = useState({ products: [] });
   const navigate = useNavigate()
@@ -50,7 +51,7 @@ export default function Cart() {
     navigate("/")
   }
 const handleBuyNow = () => {
-  if (!cart?.products?.length) {
+  if (!cart.products.length) {
     toast.error("Cart is empty");
     return;
   }
@@ -61,9 +62,13 @@ const handleBuyNow = () => {
   }));
 
   navigate("/order", {
-    state: { products },
+    state: {
+      products,
+      checkoutType: "cart",
+    },
   });
 };
+
 
 
  
@@ -73,7 +78,7 @@ const handleBuyNow = () => {
 
  return (
   <div className=" min-h-screen   sm:px-10 lg:px-16 font-serif">
-    
+    <Navbar/>
     <div className="max-w-7xl mx-auto mt-12">
       
       {/* MINIMALIST HEADER */}

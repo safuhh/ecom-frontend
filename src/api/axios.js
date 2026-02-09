@@ -3,11 +3,11 @@ import { store } from "../redux/store";
 import { loginSuccess, logout } from "../redux/authSlice";
 
 const api = axios.create({
-  baseURL: "http://localhost:3033/api",
+  baseURL: "https://ecom-backend-9ok5.onrender.com/api",
   withCredentials: true,
 });
 const refreshApi = axios.create({
-  baseURL: "http://localhost:3033/api",
+  baseURL: "https://ecom-backend-9ok5.onrender.com/api",
   withCredentials: true,
 });
 

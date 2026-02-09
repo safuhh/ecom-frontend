@@ -63,7 +63,6 @@ const AdminOrders = () => {
                   className="border rounded-xl px-4 py-2"
                 >
                   <option value="pending">Pending</option>
-                  <option value="processing">Processing</option>
                   <option value="delivered">Delivered</option>
                   <option value="cancelled">Cancelled</option>
                 </select>

@@ -25,7 +25,7 @@ const OrderForm = () => {
     setAddress({ ...address, [e.target.name]: e.target.value });
   };
 
-  // ✅ BASIC VALIDATION FUNCTION
+  // BASIC VALIDATION FUNCTION
   const validateAddress = () => {
     for (const key in address) {
       if (!address[key].trim()) {
@@ -48,13 +48,14 @@ const OrderForm = () => {
   };
 
   const handleSubmit = async () => {
-    // ❌ STOP if validation fails
+    //  STOP if validation fails
     if (!validateAddress()) return;
 
     try {
       const res = await createCheckoutSession({
         products: state.products,
         address,
+        
       });
 
       window.location.href = res.data.url;

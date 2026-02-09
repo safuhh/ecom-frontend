@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     // Solid white background for the main bar
-    <motion.nav className="sticky top-0 z-[100] w-full bg-white border-b border-gray-100">
+    <motion.nav className="fixed top-0 z-[100] w-full bg-white border-b border-gray-100">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-4 md:px-12 md:py-6">
         
         {/* BRAND */}
