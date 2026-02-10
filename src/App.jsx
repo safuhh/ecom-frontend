@@ -12,7 +12,7 @@ import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
 import AdminProducts from "./admin/AdminProducts";
 import Cart from "./components/Cart";
-import Wishlist from "./components/wishlist";
+import Wishlist from "./components/Wishlist";
 import CategoryFilter from "./components/CategoryFilter";
 import Complete from "./components/Complete";
 import UserManagement from "./admin/UserManagement";
