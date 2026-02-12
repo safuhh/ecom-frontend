@@ -116,7 +116,7 @@ export default function Navbar() {
           >
             {/* Mobile Header */}
             <div className="flex justify-between items-center mb-12">
-              <span className="text-sm font-serif tracking-[0.3em] uppercase text-gray-400">Navigation</span>
+              
               <button onClick={() => setOpen(false)} className="p-2 text-gray-900">
                 <X size={28} strokeWidth={1} />
               </button>
